@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+　　#canvas{
+    border:none;
+　　}
+</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="800px" height="600px"></canvas>
+	</body>
+	 <script>
+     var canvas=document.getElementById("canvas");  //定义canvas画布
+     var conText=canvas.getContext("2d");
+     var str1="我们哭了，我们笑着，我们抬头望天空，星星还亮着几颗。";
+     var str2="我们唱了，时间的歌，才懂得互相拥抱，到底是为了什么。";
+     var i=0;
+     conText.font="20px 微软雅黑";  //大小 字体
+     conText.fillStyle="red";
+    var timer=setInterval(function(){
+        conText.fillText(str1.charAt(i),50+i*20,150);
+        i++;
+        if(i==str1.length){
+            clearInterval(timer);
+            i=0;
+            var timer2=setInterval(function(){
+                conText.fillText(str2.charAt(i),50+i*20,190);
+                i++;
+                if(i==str1.length){
+                    clearInterval(timer2);
+                }
+            },200)
+        }
+},200)
+ </script>
+</html>

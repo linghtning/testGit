@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+    	span{
+    		display: inline-block;
+    		width: 200px;height: 50px;background: black;
+    	}
+    </style>
+</head>
+<body>
+        <h3>调用delay()方法延时执行动画效果</h3>
+        <span></span> 
+        <input id="btnStop" type="button" value="延时" />
+        <div id="tip"></div>
+        
+        
+</body>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script type="text/javascript">
+            $(function () {
+                $("span").animate({   
+                    left: "+=100px"
+                }, 3000, function () {
+                    $(this).animate({   
+                        height: '+=60px', 
+                        width: '+=60px'
+                    }, 3000, 
+                    function () {
+                        $("#tip").html("执行完成!"); 
+                    }); 
+                });
+                
+                $("#btnStop").bind("click", function () {
+                    $("span").delay(1000);   
+                    $("#tip").html("正在延时!");                  
+                });
+            });            
+        </script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		var arr1= ['a','b','c','d','e','f','g','h'];
+		
+		var arr2 =[1,2,3,4];
+		var arPush1=[];
+		var arPush2=[];
+		
+		for(var i =0;i<arr1.length;i++){ //break直接跳出循環 并不包含当前循环
+			if(arr1[i]=='c'){
+				break;
+			};
+			arPush1.push(arr1[i])
+			
+		}
+		console.log(arPush1)
+		
+		for(var i =0;i<arr2.length;i++){ //continue 只是剔除當前循环 会继续循环下面的
+			if(arr2[i]=='2'){
+				continue;
+			};
+			arPush2.push(arr2[i])
+			
+		}
+		console.log(arPush2)
+	</script>
+</html>
